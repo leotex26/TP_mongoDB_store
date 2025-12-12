@@ -1,10 +1,7 @@
 package fr.diginamic;
 
 import com.mongodb.client.result.DeleteResult;
-import com.sun.tools.javac.Main;
 import org.bson.Document;
-import org.bson.types.ObjectId;
-
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.*;
@@ -105,7 +102,6 @@ public class DemoMongoApplication {
 
     // suppression
     Document queryProductGreen = new Document("color", "Green");
-    mongoManager.getCollection().deleteMany(queryProductGreen);
     DeleteResult res = mongoManager.getCollection().deleteMany(queryProductGreen);
     System.out.println("Documents supprimés : " + res.getDeletedCount());
 
@@ -139,7 +135,7 @@ public class DemoMongoApplication {
     // creation de nos documents
     Document fruit1 = new Document().append("name", "Clementine").append("price", 1.05).append("quantity", 12).append("category", "Fruit").append("color", "Orange");
     Document fruit2 = new Document().append("name", "Mandarine").append("price", 1.25).append("quantity", 5).append("category", "Fruit").append("color", "Orange");
-    Document vegetable1 = new Document().append("name", "sweat Potato").append("price", 3.05).append("quantity", 2).append("category", "Vegetable");
+    Document vegetable1 = new Document().append("name", "sweet Potato").append("price", 3.05).append("quantity", 2).append("category", "Vegetable");
     List<Document> vegetablesAndFruits = Arrays.asList(fruit1, fruit2, vegetable1);
 
     // insertion
