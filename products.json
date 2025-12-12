@@ -1,0 +1,31 @@
+{
+  "$jsonSchema": {
+    "bsonType": "object",
+    "required": ["name", "category", "price", "quantity"],
+    "properties": {
+      "name": {
+        "bsonType": "string",
+        "description": "Nom du produit"
+      },
+      "color": {
+        "bsonType": "string",
+        "description": "Doit être une couleur"
+      },
+      "category": {
+        "bsonType": "string",
+        "enum": ["Fruit", "vegetable"],
+        "description": "Doit être fruit ou vegetable"
+      },
+      "price": {
+        "bsonType": "double",
+        "minimum": 0,
+        "description": "Prix du produit"
+      },
+      "quantity": {
+        "bsonType": "int",
+        "minimum": 0,
+        "description": "Quantité en stock"
+      }
+    }
+  }
+}
